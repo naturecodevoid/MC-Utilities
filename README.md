@@ -1,5 +1,7 @@
 # MC-Utilities
 
+![npm](https://img.shields.io/npm/v/mc-utilities?style=flat-square)
+
 A collection of utilities to use for minecraft.
 
 Features:
