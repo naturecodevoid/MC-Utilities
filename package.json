@@ -1,0 +1,19 @@
+{
+    "name": "mc-utils",
+    "version": "1.0.0",
+    "description": "Minecraft utilities (for java and bedrock edition)",
+    "main": "src/index.js",
+    "files": [
+        "src/**/*"
+    ],
+    "scripts": {
+        "lint": "xo --fix"
+    },
+    "author": "naturecodevoid",
+    "license": "ISC",
+    "private": false,
+    "devDependencies": {
+        "nature-prettier-config": "^1.0.11",
+        "nature-xo-config": "^1.0.7"
+    }
+}
