@@ -1,5 +1,5 @@
 {
-    "name": "mc-utils",
+    "name": "mc-utilities",
     "version": "1.0.0",
     "description": "Minecraft utilities (for java and bedrock edition)",
     "main": "src/index.js",

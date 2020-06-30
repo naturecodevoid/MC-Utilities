@@ -1,4 +1,4 @@
-# MC-Utils
+# MC-Utilities
 
 A collection of utilities to use for minecraft.
 
@@ -13,7 +13,7 @@ More features probably coming soon
 Getting the package:
 
 ```js
-const mcutils = require("mc-utils");
+const mcutils = require("mc-utilities");
 ```
 
 The package is split into two different parts, one for bedrock edition, and one for java edition.
