@@ -23,5 +23,9 @@
     "bugs": {
         "url": "https://github.com/naturecodevoid/mc-utilities/issues"
     },
-    "homepage": "https://github.com/naturecodevoid/mc-utilities#readme"
+    "homepage": "https://github.com/naturecodevoid/mc-utilities#readme",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "fs-extra": "^9.0.1"
+    }
 }

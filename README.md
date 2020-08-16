@@ -10,7 +10,7 @@ Features:
 
 More features probably coming soon
 
-## API
+## Documentation
 
 Getting the package:
 
@@ -18,7 +18,9 @@ Getting the package:
 const mcutils = require("mc-utilities");
 ```
 
-The package is split into two different parts, one for bedrock edition, and one for java edition.
+I recommend using [this](#api) api instead of the edition api.
+
+If you want to use only one edition, some of the package is split into two different parts, one for bedrock edition, and one for java edition.
 
 Getting bedrock edition:
 
@@ -34,14 +36,31 @@ const java = mcutils.java;
 
 The two editions should mostly be the same in terms of api.
 
-### Edition API
+### API
 
 #### `path`: The `.minecraft`/`com.mojang` folder path
 
 Getting it:
 
 ```js
-const path = edition.path;
+const path = mcutils.path.<edition>;
+```
+
+Examples:
+
+-   `/Users/user/Library/Application Support/minecraft`: Mac OS java edition
+-   `/Users/user/Library/Application Support/mcpelauncher/games/com.mojang`: Mac OS mcpelauncher
+
+### Edition API
+
+**Note: mirrors [this](#api)**
+
+#### `path`: The `.minecraft`/`com.mojang` folder path
+
+Getting it:
+
+```js
+const path = <edition>.path;
 ```
 
 Examples:
