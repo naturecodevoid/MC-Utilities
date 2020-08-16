@@ -1,16 +1,26 @@
 const chalk = require("chalk");
 
 module.exports = {
-    log(msg) {
-        this.info(msg);
+    log(message) {
+        this.info(message);
     },
-    info(msg) {
-        console.log(chalk.greenBright("[INFO] ") + msg);
+    debug(message) {
+        console.log(chalk.blueBright("[DEBUG] ") + message);
     },
-    warn(msg) {
-        console.log(chalk.yellowBright("[WARN] ") + msg);
+    info(message) {
+        console.log(chalk.greenBright("[INFO] ") + message);
     },
-    error(msg) {
-        console.log(chalk.redBright("[ERROR] ") + msg);
+    warn(message) {
+        console.log(chalk.yellowBright("[WARN] ") + message);
+    },
+    error(message) {
+        console.log(chalk.redBright("[ERROR] ") + message);
+    },
+    tryvoid(func) {
+        try {
+            func();
+        } catch (error) {
+            const a = null;
+        }
     },
 };

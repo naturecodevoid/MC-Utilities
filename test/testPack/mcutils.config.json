@@ -1,1 +1,16 @@
-{}
+{
+    "variations": [
+        {
+            "name": "test Pack1",
+            "path": "variations/testPack1",
+            "outPath": "out"
+        }
+    ],
+    "basePack": {
+        "name": "test Pack",
+        "path": "pack",
+        "outPath": "out"
+    },
+    "packJava": true,
+    "packBedrock": true
+}

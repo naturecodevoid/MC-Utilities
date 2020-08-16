@@ -20,7 +20,8 @@ const mcutils = require("mc-utilities");
 
 I recommend using [this](#api) api instead of the edition api.
 
-If you want to use only one edition, some of the package is split into two different parts, one for bedrock edition, and one for java edition.
+If you want to use only one edition, some of the package is split into two different parts, one for bedrock edition, and
+one for java edition.
 
 Getting bedrock edition:
 

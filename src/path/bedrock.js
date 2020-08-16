@@ -1,3 +1,5 @@
+const path = require("path");
+
 const getPath = () => {
     // This attempts to support mcpe-launcher but is not tested
 

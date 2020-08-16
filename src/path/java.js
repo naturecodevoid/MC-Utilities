@@ -1,3 +1,5 @@
+const path = require("path");
+
 const getPath = () => {
     if (process.env.LOCALAPPDATA || process.platform === "win32") {
         // Windows
