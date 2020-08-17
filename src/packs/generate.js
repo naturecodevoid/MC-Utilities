@@ -92,7 +92,7 @@ Remove-Item -Recurse -Force "./out/*"\n`;
 PACK_NAME="${config.basePack.name}"
 
 # Set window title. This is complicated on linux
-echo -ne "\\033]0;$PACK_NAME Java Edtion Installation\\007"
+echo -ne "\\033]0;$PACK_NAME Java Edition Installation\\007"
 
 cd "$PWD"
 
@@ -174,7 +174,7 @@ read -p "Press enter/return to exit . . ."`;
 
 set PACK_NAME=${config.basePack.name}
 
-title %PACK_NAME% Java Edtion Installation
+title %PACK_NAME% Java Edition Installation
 
 cd /D "%~dp0"
 
@@ -249,7 +249,7 @@ pause`;
 
 set PACK_NAME=${config.basePack.name}
 
-title %PACK_NAME% Bedrock Edtion Installation
+title %PACK_NAME% Bedrock Edition Installation
 
 cd /D "%~dp0"
 
