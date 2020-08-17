@@ -3,6 +3,9 @@
     "version": "1.0.3",
     "description": "Minecraft utilities (for java and bedrock edition)",
     "main": "src/index.js",
+    "bin": {
+        "mcutilspack": "./src/packs/cli.js"
+    },
     "files": [
         "src/**/*"
     ],

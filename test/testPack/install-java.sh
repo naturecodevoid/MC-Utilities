@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+PACK_NAME="test Pack"
+
+# Set window title. This is complicated on linux
+echo -ne "\033]0;$PACK_NAME Java Edtion Installation\007"
+
+cd "$PWD"
+
+MINECRAFT_FOLDER="$HOME/.minecraft"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    MINECRAFT_FOLDER="$HOME/Library/Application Support/minecraft"
+fi
+
+RESOURCE_FOLDER="$MINECRAFT_FOLDER/resourcepacks"
+
+echo
+echo ==============================
+echo Making resource pack folders...
+echo ==============================
+echo
+
+mkdir "$RESOURCE_FOLDER"
+
+### Base pack
+rm -R "$RESOURCE_FOLDER/$PACK_NAME"
+
+mkdir "$RESOURCE_FOLDER/$PACK_NAME"
+
+### Variation test Pack1
+rm -R "$RESOURCE_FOLDER/test Pack1"
+
+mkdir "$RESOURCE_FOLDER/test Pack1"
+
+echo
+echo ==============================
+echo Copying the files...
+echo ==============================
+echo
+
+### Base pack
+cp -v -f -R "$PWD/out/test Pack/." "$RESOURCE_FOLDER/$PACK_NAME"
+
+### Variation test Pack1
+cp -v -f -R "$PWD/out/test Pack1/." "$RESOURCE_FOLDER/test Pack1"
+
+echo
+echo Done!
+echo
+
+# Set window title. This is complicated on linux
+echo -ne "\033]0;Finished installing!\007"
+
+read -p "Press enter/return to exit . . ."

@@ -2,9 +2,10 @@
     "variations": [],
     "basePack": {
         "name": "",
-        "path": "pack",
-        "outPath": "out"
+        "path": "pack"
     },
-    "packJava": true,
-    "packBedrock": true
+    "outPath": "out",
+    "buildJava": true,
+    "buildBedrock": true,
+    "buildBasePack": false
 }

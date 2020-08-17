@@ -1,4 +1,4 @@
 const packs = {
-    cli: require("./cli"),
+    util: require("./util"),
 };
 module.exports = packs;

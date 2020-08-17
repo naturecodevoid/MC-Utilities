@@ -2,15 +2,15 @@
     "variations": [
         {
             "name": "test Pack1",
-            "path": "variations/testPack1",
-            "outPath": "out"
+            "path": "variations/testPack1"
         }
     ],
     "basePack": {
         "name": "test Pack",
-        "path": "pack",
-        "outPath": "out"
+        "path": "pack"
     },
-    "packJava": true,
-    "packBedrock": true
+    "outPath": "out",
+    "buildJava": true,
+    "buildBedrock": true,
+    "buildBasePack": true
 }
