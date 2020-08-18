@@ -182,11 +182,11 @@ set RESOURCE_FOLDER=%APPDATA%\\.minecraft\\resourcepacks
 
 echo 				.
 echo ==============================
-echo Making resource pack folder...
+echo Making resource pack folders...
 echo ==============================
 echo 				.
 
-md "%RESOURCE_FOLDER%"
+:: md "%RESOURCE_FOLDER%"
 `;
 
         if (config.buildBasePack) {
@@ -257,11 +257,11 @@ set RESOURCE_FOLDER=%LOCALAPPDATA%\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bb
 
 echo 				.
 echo ==============================
-echo Making resource pack folder...
+echo Making resource pack folders...
 echo ==============================
 echo 				.
 
-md "%RESOURCE_FOLDER%"
+:: md "%RESOURCE_FOLDER%"
 `;
 
         if (config.buildBasePack) {
