@@ -216,13 +216,13 @@ echo
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${config.basePack.name}/assets/minecraft/." "%RESOURCE_FOLDER%/%PACK_NAME%"`;
+            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${config.basePack.name}/." "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;
         }
 
         for (const variation of config.variations) {
             fileData += `\n:: :: Variation ${variation.name}`;
-            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${variation.name}/assets/minecraft/." "%RESOURCE_FOLDER%/${variation.name}"`;
+            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${variation.name}/." "%RESOURCE_FOLDER%/${variation.name}"`;
             fileData += `\n`;
         }
 
@@ -292,13 +292,13 @@ echo
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${config.basePack.name}/." "%RESOURCE_FOLDER%/%PACK_NAME%"`;
+            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${config.basePack.name}/assets/minecraft/." "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;
         }
 
         for (const variation of config.variations) {
             fileData += `\n:: :: Variation ${variation.name}`;
-            fileData += `\nrobocopy /S /V /MIR "%~dp0/out/${variation.name}/." "%RESOURCE_FOLDER%/${variation.name}"`;
+            fileData += `\nrobocopy /S /V /MIR "%~dp0/${config.outPath}/${variation.name}/assets/minecraft/." "%RESOURCE_FOLDER%/${variation.name}"`;
             fileData += `\n`;
         }
 
