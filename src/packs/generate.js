@@ -77,6 +77,7 @@ Remove-Item -Recurse -Force "./out/*"\n`;
                 fileData += `\n\n# Java edition`;
                 fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/" | Compress-Archive -Force -DestinationPath "./out/${variation.name} Java.zip"`;
             }
+            fileData += `\n`;
         }
 
         debug(`file data for ${fileName}:`, `\n${fileData}\n`);

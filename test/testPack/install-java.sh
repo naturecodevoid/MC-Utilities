@@ -33,6 +33,11 @@ rm -R "$RESOURCE_FOLDER/test Pack1"
 
 mkdir "$RESOURCE_FOLDER/test Pack1"
 
+### Variation test Pack2
+rm -R "$RESOURCE_FOLDER/test Pack2"
+
+mkdir "$RESOURCE_FOLDER/test Pack2"
+
 echo
 echo ==============================
 echo Copying the files...
@@ -44,6 +49,9 @@ cp -v -f -R "$PWD/out/test Pack/." "$RESOURCE_FOLDER/$PACK_NAME"
 
 ### Variation test Pack1
 cp -v -f -R "$PWD/out/test Pack1/." "$RESOURCE_FOLDER/test Pack1"
+
+### Variation test Pack2
+cp -v -f -R "$PWD/out/test Pack2/." "$RESOURCE_FOLDER/test Pack2"
 
 echo
 echo Done!

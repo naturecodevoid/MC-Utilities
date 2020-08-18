@@ -3,6 +3,10 @@
         {
             "name": "test Pack1",
             "path": "variations/testPack1"
+        },
+        {
+            "name": "test Pack2",
+            "path": "variations/testPack1"
         }
     ],
     "basePack": {

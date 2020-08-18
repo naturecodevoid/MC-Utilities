@@ -23,3 +23,15 @@ Get-ChildItem -Path "./out/test Pack1/assets/minecraft/" | Compress-Archive -For
 
 # Java edition
 Get-ChildItem -Path "./out/test Pack1/" | Compress-Archive -Force -DestinationPath "./out/test Pack1 Java.zip"
+
+### Variation test Pack2
+Copy-Item -Path "./pack/" -Force -Recurse -Destination "./out/test Pack2"
+Copy-Item -Path "./variations/testPack1/*" -Force -Recurse -Destination "./out/test Pack2/"
+
+# Bedrock edition
+Get-ChildItem -Path "./out/test Pack2/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/test Pack2 Bedrock.zip"
+Move-Item "./out/test Pack2 Bedrock.zip" "./out/test Pack2 Bedrock.mcpack"
+Get-ChildItem -Path "./out/test Pack2/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/test Pack2 Bedrock.zip"
+
+# Java edition
+Get-ChildItem -Path "./out/test Pack2/" | Compress-Archive -Force -DestinationPath "./out/test Pack2 Java.zip"

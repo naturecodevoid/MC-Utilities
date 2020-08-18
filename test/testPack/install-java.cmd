@@ -17,7 +17,8 @@ echo 				.
 md "%RESOURCE_FOLDER%"
 
 :: :: Base pack
-rd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
+rd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
+rd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"
 
@@ -25,6 +26,11 @@ md "%RESOURCE_FOLDER%/%PACK_NAME%"
 rm -R "%RESOURCE_FOLDER%/test Pack1"
 
 md "%RESOURCE_FOLDER%/test Pack1"
+
+:: :: Variation test Pack2
+rm -R "%RESOURCE_FOLDER%/test Pack2"
+
+md "%RESOURCE_FOLDER%/test Pack2"
 
 echo
 echo ==============================
@@ -37,6 +43,9 @@ robocopy /S /V /MIR "%~dp0/out/test Pack/." "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 :: :: Variation test Pack1
 robocopy /S /V /MIR "%~dp0/out/test Pack1/." "%RESOURCE_FOLDER%/test Pack1"
+
+:: :: Variation test Pack2
+robocopy /S /V /MIR "%~dp0/out/test Pack2/." "%RESOURCE_FOLDER%/test Pack2"
 
 echo Done!
 
