@@ -37,7 +37,7 @@ Popd`;
         const fileName = "build.ps1";
         files += `${fileName} `;
         let fileData = `New-Item -ItemType Directory -Force -Path "./out"
-Remove-Item -Recurse -Force "./out/*"\n`;
+Remove-Item -Recurse -Force "./${config.outPath}/*"\n`;
 
         if (config.buildBasePack) {
             fileData += `\n### Base pack`;
@@ -46,15 +46,15 @@ Remove-Item -Recurse -Force "./out/*"\n`;
             // Bedrock
             if (config.buildBedrock) {
                 fileData += `\n\n# Bedrock edition`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/${config.basePack.name} Bedrock.zip"`;
-                fileData += `\nMove-Item "./out/${config.basePack.name} Bedrock.zip" "./out/${config.basePack.name} Bedrock.mcpack"`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/${config.basePack.name} Bedrock.zip"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${config.basePack.name} Bedrock.zip"`;
+                fileData += `\nMove-Item "./${config.outPath}/${config.basePack.name} Bedrock.zip" "./${config.outPath}/${config.basePack.name} Bedrock.mcpack"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${config.basePack.name} Bedrock.zip"`;
             }
 
             // Java
             if (config.buildJava) {
                 fileData += `\n\n# Java edition`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/" | Compress-Archive -Force -DestinationPath "./out/${config.basePack.name} Java.zip"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${config.basePack.name}/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${config.basePack.name} Java.zip"`;
             }
             fileData += `\n`;
         }
@@ -67,15 +67,15 @@ Remove-Item -Recurse -Force "./out/*"\n`;
             // Bedrock
             if (config.buildBedrock) {
                 fileData += `\n\n# Bedrock edition`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/${variation.name} Bedrock.zip"`;
-                fileData += `\nMove-Item "./out/${variation.name} Bedrock.zip" "./out/${variation.name} Bedrock.mcpack"`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./out/${variation.name} Bedrock.zip"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${variation.name} Bedrock.zip"`;
+                fileData += `\nMove-Item "./${config.outPath}/${variation.name} Bedrock.zip" "./${config.outPath}/${variation.name} Bedrock.mcpack"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${variation.name} Bedrock.zip"`;
             }
 
             // Java
             if (config.buildJava) {
                 fileData += `\n\n# Java edition`;
-                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/" | Compress-Archive -Force -DestinationPath "./out/${variation.name} Java.zip"`;
+                fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${variation.name} Java.zip"`;
             }
             fileData += `\n`;
         }
@@ -146,7 +146,7 @@ echo
 
         for (const variation of config.variations) {
             fileData += `\n### Variation ${variation.name}`;
-            fileData += `\ncp -v -f -R "$PWD/out/${variation.name}/." "$RESOURCE_FOLDER/${variation.name}"`;
+            fileData += `\ncp -v -f -R "$PWD/${config.outPath}/${variation.name}/." "$RESOURCE_FOLDER/${variation.name}"`;
             fileData += `\n`;
         }
 
