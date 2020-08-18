@@ -3,7 +3,7 @@
 PACK_NAME="test Pack"
 
 # Set window title. This is complicated on linux
-echo -ne "\033]0;$PACK_NAME Java Edtion Installation\007"
+echo -ne "\033]0;$PACK_NAME Java Edition Installation\007"
 
 cd "$PWD"
 

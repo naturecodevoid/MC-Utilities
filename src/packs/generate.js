@@ -165,11 +165,11 @@ read -p "Press enter/return to exit . . ."`;
 
     // =============== install-java.cmd =============== //
     if (config.buildJava) {
-        fs.writeFileSync(path.join(process.cwd(), "deltree.cmd"), deltree);
+        // fs.writeFileSync(path.join(process.cwd(), "deltree.cmd"), deltree);
 
         const fileName = "install-java.cmd";
         files += `${fileName} `;
-        createdDeltree = true;
+        // createdDeltree = true;
         let fileData = `@echo off
 
 set PACK_NAME=${config.basePack.name}
@@ -186,12 +186,12 @@ echo Making resource pack folders...
 echo ==============================
 echo 				.
 
-:: md "%RESOURCE_FOLDER%"
+md "%RESOURCE_FOLDER%"
 `;
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\n./deltree.cmd "%RESOURCE_FOLDER%/%PACK_NAME%"
+            fileData += `\nrd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;
@@ -240,11 +240,11 @@ pause`;
 
     // =============== install-bedrock.cmd =============== //
     if (config.buildBedrock) {
-        fs.writeFileSync(path.join(process.cwd(), "deltree.cmd"), deltree);
+        // fs.writeFileSync(path.join(process.cwd(), "deltree.cmd"), deltree);
 
         const fileName = "install-bedrock.cmd";
         files += `${fileName} `;
-        createdDeltree = true;
+        // createdDeltree = true;
         let fileData = `@echo off
 
 set PACK_NAME=${config.basePack.name}
@@ -261,12 +261,12 @@ echo Making resource pack folders...
 echo ==============================
 echo 				.
 
-:: md "%RESOURCE_FOLDER%"
+md "%RESOURCE_FOLDER%"
 `;
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\n./deltree.cmd "%RESOURCE_FOLDER%/%PACK_NAME%"
+            fileData += `\nrd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;

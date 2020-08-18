@@ -2,7 +2,7 @@
 
 set PACK_NAME=test Pack
 
-title %PACK_NAME% Bedrock Edtion Installation
+title %PACK_NAME% Bedrock Edition Installation
 
 cd /D "%~dp0"
 
@@ -10,14 +10,14 @@ set RESOURCE_FOLDER=%LOCALAPPDATA%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe
 
 echo 				.
 echo ==============================
-echo Making resource pack folder...
+echo Making resource pack folders...
 echo ==============================
 echo 				.
 
 md "%RESOURCE_FOLDER%"
 
 :: :: Base pack
-./deltree.cmd "%RESOURCE_FOLDER%/%PACK_NAME%"
+rd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"
 
