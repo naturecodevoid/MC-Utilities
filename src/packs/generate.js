@@ -191,7 +191,8 @@ md "%RESOURCE_FOLDER%"
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\nrd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
+            fileData += `\nrd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
+rd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;
@@ -266,7 +267,8 @@ md "%RESOURCE_FOLDER%"
 
         if (config.buildBasePack) {
             fileData += `\n:: :: Base pack`;
-            fileData += `\nrd /S "%RESOURCE_FOLDER%/%PACK_NAME%"
+            fileData += `\nrd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
+rd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 md "%RESOURCE_FOLDER%/%PACK_NAME%"`;
             fileData += `\n`;
