@@ -1,9 +1,9 @@
 const path = require("path");
 
 const getPath = () => {
-    if (process.env.LOCALAPPDATA || process.platform === "win32") {
+    if (process.env.APPDATA || process.platform === "win32") {
         // Windows
-        return path.join(process.env.LOCALAPPDATA, ".minecraft");
+        return path.join(process.env.APPDATA, ".minecraft");
     }
 
     if (process.platform === "darwin") {
