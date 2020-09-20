@@ -82,7 +82,7 @@ download [PowerShell Core](https://github.com/PowerShell/PowerShell/#get-powersh
 MC Utilities features easy to use pack making utilities. It will generate scripts to build your pack, and install it.
 You just specify a config and run `mcutilspack` in your console, and the scripts will be built.
 
-When running `mcutilspack`, you need to have MC Utilities installed globally (`npm install mc-utilities`). It will
+When running `mcutilspack`, you need to have MC Utilities installed globally (`npm install -g mc-utilities`). It will
 generate `build.ps1`, which you run (`pwsh ./build.ps1` or `powershell ./build.ps1`) to build the pack. It will also
 generate `install-java.cmd`, `install-java.sh`, and `install-bedrock.cmd` accordingly to the config.
 
