@@ -6,6 +6,7 @@ A collection of utilities to use for minecraft.
 
 Features:
 
+-   **Pack making utilities (see [this](#packs))**
 -   `.minecraft`/`com.mojang` folder location for java edition and bedrock edition (includes all platforms)
 
 More features probably coming soon
@@ -68,3 +69,47 @@ Examples:
 
 -   `/Users/user/Library/Application Support/minecraft`: Mac OS java edition
 -   `/Users/user/Library/Application Support/mcpelauncher/games/com.mojang`: Mac OS mcpelauncher
+
+## Packs
+
+### Requirements
+
+If you're on windows 10, you should be able to use `powershell` instead of `pwsh` to run `build.ps1`. If not (or `powershell` isn't working), please
+download [PowerShell Core](https://github.com/PowerShell/PowerShell/#get-powershell).
+
+### Usage
+
+MC Utilities features easy to use pack making utilities. It will generate scripts to build your pack, and install it.
+You just specify a config and run `mcutilspack` in your console, and the scripts will be built.
+
+When running `mcutilspack`, you need to have MC Utilities installed globally (`npm install mc-utilities`). It will
+generate `build.ps1`, which you run (`pwsh ./build.ps1` or `powershell ./build.ps1`) to build the pack. It will also
+generate `install-java.cmd`, `install-java.sh`, and `install-bedrock.cmd` accordingly to the config.
+
+Here's an example config:
+
+```json
+{
+    "variations": [
+        {
+            "name": "name (cool edition)", // The name
+            "path": "variations/cool_edition" // The path to the variation
+        }
+    ],
+    "basePack": {
+        "name": "name", // The name
+        "path": "pack" // The path to the pack
+    },
+    "outPath": "out", // The out pack
+    "buildJava": true, // If the pack should be built for java
+    "buildBedrock": true, // If the pack should be built for bedrock
+    "buildBasePack": false // If the base pack should be built
+}
+```
+
+**NOTE**: Variations are packs that extend the base pack. This means that the variation will be a pack that gets copied
+onto the base pack, overriding files. Example: `variation/a.txt` has text `hi`. `basePack/a.txt` has text `test`.
+`basePack/b.txt` has text `test2`. If you build the base pack `a.txt` will have `test` in it, and `b.txt` will have
+`test2`. If you build the variation, `a.txt` will have `hi` in it, and `b.txt` will have `test2` in it.
+
+The default configuration will always be merged onto your config so you'll never miss out on new features.
