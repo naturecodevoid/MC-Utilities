@@ -74,8 +74,9 @@ Examples:
 
 ### Requirements
 
-If you're on windows 10, you should be able to use `powershell` instead of `pwsh` to run `build.ps1`. If not (or `powershell` isn't working), please
-download [PowerShell Core](https://github.com/PowerShell/PowerShell/#get-powershell).
+If you're on windows 10, you should be able to use `powershell` instead of `pwsh` to run `build.ps1`. If not (or
+`powershell` isn't working), please download
+[PowerShell Core](https://github.com/PowerShell/PowerShell/#get-powershell).
 
 ### Usage
 
@@ -85,6 +86,18 @@ You just specify a config and run `mcutilspack` in your console, and the scripts
 When running `mcutilspack`, you need to have MC Utilities installed globally (`npm install -g mc-utilities`). It will
 generate `build.ps1`, which you run (`pwsh ./build.ps1` or `powershell ./build.ps1`) to build the pack. It will also
 generate `install-java.cmd`, `install-java.sh`, and `install-bedrock.cmd` accordingly to the config.
+
+If you need a bigger example, **make sure to look at [vanillafault](https://github.com/naturecodevoid/vanillafault)**.
+It's a small default edit/utility pack and might explain problems you experience.
+
+**NOTE**: Variations are packs that extend the base pack. This means that the variation will be a pack that gets copied
+onto the base pack, overriding files. Example: `variation/a.txt` has text `hi`. `basePack/a.txt` has text `test`.
+`basePack/b.txt` has text `test2`. If you build the base pack `a.txt` will have `test` in it, and `b.txt` will have
+`test2`. If you build the variation, `a.txt` will have `hi` in it, and `b.txt` will have `test2` in it.
+
+**NOTE 2**: If you are going to make a pack for bedrock edition, **place your files in `pack/assets/minecraft`. If you
+don't mc-utilities won't build the pack correctly.** Example:
+https://github.com/naturecodevoid/vanillafault/tree/master/pack/assets/minecraft
 
 Here's an example config:
 
@@ -106,10 +119,5 @@ Here's an example config:
     "buildBasePack": false // If the base pack should be built
 }
 ```
-
-**NOTE**: Variations are packs that extend the base pack. This means that the variation will be a pack that gets copied
-onto the base pack, overriding files. Example: `variation/a.txt` has text `hi`. `basePack/a.txt` has text `test`.
-`basePack/b.txt` has text `test2`. If you build the base pack `a.txt` will have `test` in it, and `b.txt` will have
-`test2`. If you build the variation, `a.txt` will have `hi` in it, and `b.txt` will have `test2` in it.
 
 The default configuration will always be merged onto your config so you'll never miss out on new features.
