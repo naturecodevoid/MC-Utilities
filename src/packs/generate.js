@@ -3,6 +3,7 @@ const path = require("path");
 const chalk = require("chalk");
 const { log, error, warn, debug, tryvoid } = require("../util");
 const util = require("./util");
+const { spawn } = require("child_process");
 
 module.exports = () => {
     const cfg = util.getConfig();
@@ -152,6 +153,8 @@ read -p "Press enter/return to exit . . ."`;
 
         debug(`file data for ${fileName}:`, `\n${fileData}\n`);
         fs.writeFileSync(path.join(process.cwd(), fileName), fileData);
+        spawn(`chmod`, ["+x", `./${fileName}`]);
+        spawn(`git`, ["update-index", "--chmod=+x", `./${fileName}`]);
     }
 
     // =============== install-java.cmd =============== //
