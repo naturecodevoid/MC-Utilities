@@ -9,28 +9,6 @@ module.exports = () => {
     const config = cfg.data;
 
     let files = "";
-    let createdDeltree = false;
-
-    const deltree = `:: !!! DO NOT DELETE OR INSTALL SCRIPTS WILL NOT WORK !!!
-
-:: From https://ss64.com/nt/deltree.html
-
-:: DelTree.cmd
-:: Delete a folder plus all files and subfolders
-@Echo Off
-Set _folder=%1
-if [%_folder%]==[] goto:eof
-
-PUSHD %_folder%
-::  If this fails, exit, we dont want to delete from the wrong folder.
-If %errorlevel% NEQ 0 goto:eof
-
-Del /f /q /s *.* >NUL
-CD \
-RD /s /q %_folder%
-:: repeat because RD is sometimes buggy 
-if exist %_folder% RD /s /q %_folder%
-Popd`;
 
     // =============== build.ps1 =============== //
     {
@@ -44,7 +22,7 @@ catch {
     catch { echo "Deleting .DS_Store files failed, probably not on a linux based OS" }
 }
 
-New-Item -ItemType Directory -Force -Path "./out"
+New-Item -ItemType Directory -Force -Path "./${config.outPath}"
 Remove-Item -Recurse -Force "./${config.outPath}/*"\n`;
 
         if (config.buildBasePack) {
@@ -332,7 +310,6 @@ pause`;
         fs.writeFileSync(path.join(process.cwd(), fileName), fileData);
     }
 
-    if (createdDeltree) files += "deltree.cmd";
-
-    log("Done! Generated files:", files, "\nPlease don't delete any of these files!");
+    log("Done! Generated files:", files);
+    log("Please don't delete any of these files!");
 };

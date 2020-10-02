@@ -5,6 +5,7 @@ const { log, error, warn } = require("../util");
 const merge = require("deepmerge");
 
 module.exports = {
+    // TODO: migration system that changes values if their name/location in the config were changed
     Config: class {
         constructor(configData = fs.readFileSync(module.exports.getConfigPath(), "utf-8")) {
             this.path = module.exports.getConfigPath();
