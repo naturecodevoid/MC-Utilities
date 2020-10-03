@@ -16,5 +16,6 @@
     "outPath": "out",
     "buildJava": true,
     "buildBedrock": true,
-    "buildBasePack": true
+    "buildBasePack": true,
+    "bedrockBuildSubpacks": true
 }

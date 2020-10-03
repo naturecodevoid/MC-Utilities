@@ -54,6 +54,14 @@ Remove-Item -Recurse -Force "./${config.outPath}/*"\n`;
             // Bedrock
             if (config.buildBedrock) {
                 fileData += `\n\n# Bedrock edition`;
+
+                // Subpacks
+                if (config.bedrockBuildSubpacks) {
+                    fileData += `\n\n# Bedrock edition subpacks`;
+                    fileData += `\nCopy-Item -Path "./${config.basePack.path}/" -Force -Recurse -Destination "./${config.outPath}/${variation.name}"`;
+                    // TODO: change manifest.json/change manifest.json using node when running mcutilspack
+                }
+
                 fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${variation.name} Bedrock.zip"`;
                 fileData += `\nMove-Item "./${config.outPath}/${variation.name} Bedrock.zip" "./${config.outPath}/${variation.name} Bedrock.mcpack"`;
                 fileData += `\nGet-ChildItem -Path "./${config.outPath}/${variation.name}/assets/minecraft/" | Compress-Archive -Force -DestinationPath "./${config.outPath}/${variation.name} Bedrock.zip"`;
