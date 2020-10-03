@@ -1,4 +1,10 @@
 #!/usr/bin/env node
 
-const generate = require("./generate");
-generate();
+(() => {
+    if (process.argv.includes("convert") || process.argv.includes("converter")) {
+        require("./converter")(process.argv);
+        return;
+    }
+
+    require("./generate")();
+})();
