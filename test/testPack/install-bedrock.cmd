@@ -25,12 +25,14 @@ rd /S /Q "%RESOURCE_FOLDER%/%PACK_NAME%"
 md "%RESOURCE_FOLDER%/%PACK_NAME%"
 
 :: :: Variation test Pack1
-rm -R "%RESOURCE_FOLDER%/test Pack1"
+rd /S /Q "%RESOURCE_FOLDER%/test Pack1"
+rd /S /Q "%RESOURCE_FOLDER%/test Pack1"
 
 md "%RESOURCE_FOLDER%/test Pack1"
 
 :: :: Variation test Pack2
-rm -R "%RESOURCE_FOLDER%/test Pack2"
+rd /S /Q "%RESOURCE_FOLDER%/test Pack2"
+rd /S /Q "%RESOURCE_FOLDER%/test Pack2"
 
 md "%RESOURCE_FOLDER%/test Pack2"
 
