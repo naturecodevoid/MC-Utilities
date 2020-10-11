@@ -1,7 +1,6 @@
 const fs = require("fs-extra");
 const path = require("path");
-const chalk = require("chalk");
-const { log, error, warn } = require("../util");
+const { warn } = require("../util");
 const merge = require("deepmerge");
 
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
         }
 
         save() {
-            fs.writeFileSync(this.path, JSON.stringify(this.data, null, "    "));
+            fs.writeFileSync(this.path, `${JSON.stringify(this.data, null, "    ")}\n`);
         }
     },
     getConfigPath() {

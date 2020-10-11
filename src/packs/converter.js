@@ -8,6 +8,7 @@ module.exports = (args = process.argv) => {
     if (args.length <= 0) {
         return util.error("Please provide a edition for the first argument!");
     }
+
     if (args.length === 1) {
         return util.error(
             "If you don't provide a path for the second argument, the converter will default to the current directory. If you want to write files in the same directory as the base pack, please pass `.` as the second argument.",

@@ -29,7 +29,6 @@
     },
     "homepage": "https://github.com/naturecodevoid/mc-utilities#readme",
     "dependencies": {
-        "archiver": "^5.0.0",
         "chalk": "^4.1.0",
         "deepmerge": "^4.2.2",
         "fs-extra": "^9.0.1"
