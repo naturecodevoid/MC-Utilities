@@ -5,15 +5,9 @@ module.exports = (args = process.argv) => {
     args = args.slice(1).slice(1);
     util.debug(`args: ${args}`);
 
-    if (args.length <= 0) {
-        return util.error("Please provide a edition for the first argument!");
-    }
+    if (args.length <= 0) return util.error("Please provide a edition for the first argument!");
 
-    if (args.length === 1) {
-        return util.error(
-            "If you don't provide a path for the second argument, the converter will default to the current directory. If you want to write files in the same directory as the base pack, please pass `.` as the second argument.",
-        );
-    }
+    if (args.length === 1) return util.error("Please provide the path to the pack!");
 
     const editions = {
         java: 1,
@@ -26,6 +20,8 @@ module.exports = (args = process.argv) => {
     else edition = editions.java;
 
     const path_ = path.resolve(args[1]);
+
+    util.debug(`edition: ${edition}`);
 
     util.debug(`path: ${path_}`);
 };
