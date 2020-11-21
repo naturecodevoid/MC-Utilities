@@ -87,7 +87,7 @@ PACK_NAME="${config.basePack.name}"
 # Set window title. This is complicated on linux
 echo -ne "\\033]0;$PACK_NAME Java Edition Installation\\007"
 
-cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+cd "$(cd "$(dirname "\${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 MINECRAFT_FOLDER="$HOME/.minecraft"
 
